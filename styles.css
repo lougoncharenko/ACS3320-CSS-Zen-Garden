@@ -1,52 +1,144 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Indie+Flower&display=swap");
 
 :root {
-    --pale-white: #fbf9fa;
-    --light-pink: #f70776;
-    --dark-pink:  #c3195d;
-    --purple:  #680747;
-    --black: #141010;
+  --pale-white: #fbf9fa;
+  --light-pink: #f70776;
+  --dark-pink: #c3195d;
+  --purple: #680747;
+  --black: #141010;
 }
-
-/* :root {
-    --zen-light-green: #d3f6d1;
-    --zen-light-blue: #a7d7c5;
-    --zen-dark-green: #74b49b;
-    --zen-dark-blue: #5c8d89;
-} */
 
 body {
-    font-family: 'Crimson Text', serif;
-    margin: 0;
-    padding: 0;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0; 
+}
+
+.page-wrapper {
+    display:grid;
+    grid-template-areas:
+    "intro intro"
+    "main side-bar";
+}
+
+.intro {
+    background-color: pink;
+    grid-area: intro;
+    display:grid;
+    grid-template-areas:
+    "header"
+    "preamble"  
+    "summary ";
+}
+
+.main {
+    background-color: green;
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: side-bar;
+    background-color: orange;
+}
+
+.summary {
+    grid-area: summary;
+}
+
+.preamble {
+    grid-area: preamble;
 }
 
 
+header {  
+  grid-area: header;
+  background-image: url("https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-188,7219-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/KYO/KYO_813_original.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 650px;
 
-
-header {
-background-image: url('https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-188,7219-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/KYO/KYO_813_original.jpg');
-background-repeat: no-repeat;
-background-size: auto;
-background-position: center;
-height: 700px;
 }
 
 header:first-child {
-    border: 2px solid #f70776; 
+  border: 2px solid #f70776;
 }
 
-
 header > * {
-    color: var(--pale-white);
-    font-size: 30px;
+  color: var(--pale-white);
+  text-shadow: 2px 2px 2px var(--purple);
+  font-size: 45px;
+  animation: 2s anim-lineUp ease-out;
+  /* animation: 2s anim-lineUp ease-out infinite; */
 }
 
 header > h1 {
-    position:fixed; left:800px; top:20px;
+  position: absolute;
+  top: 8px;
+  right: 16px;
 }
 
 header > h2 {
-    position:fixed; left:800px; top:60px;
+  position: absolute;
+  top: 50px;
+  right: 16px;
+}
+
+header > h2 > *  {
+   position: absolute;
+   top: 50px;
+   right: 16px;
+   opacity: 0
+  }
+
+body {
+  background-color: tan;
+}
+
+/* Animations */
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: olive;
+  }
+  header {
+    height: 550px;
+  }
+
+  header > * {
+    font-size: 35px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 650px) {
+  body {
+    background-color: blue;
+  }
+  header {
+    height: 400px;
+  }
+
+  header > * {
+    font-size: 30px;
+  }
 }
