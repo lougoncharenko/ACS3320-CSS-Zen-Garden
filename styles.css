@@ -12,53 +12,145 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 .page-wrapper {
-    display:grid;
-    grid-template-areas:
+  display: grid;
+  grid-template-areas:
     "intro intro"
     "main side-bar";
 }
 
 .intro {
-    background-color: pink;
-    grid-area: intro;
-    display:grid;
-    grid-template-areas:
+  background-color: pink;
+  grid-area: intro;
+  display: grid;
+  grid-template-areas:
     "header"
-    "preamble"  
-    "summary ";
+    "preamble";
 }
 
 .main {
-    background-color: green;
-    grid-area: main;
+  background-color: green;
+  grid-area: main;
 }
 
 .sidebar {
-    grid-area: side-bar;
-    background-color: orange;
+  display: flex;
+  grid-area: side-bar;
+  padding: 40px;
+}
+
+.sidebar > .wrapper {
+  justify-content: end;
+  background-color: pink;
+  border: 2px solid #f70776;
+  padding: 30px;
+  border-radius: 80px;
+}
+
+.wrapper > * {
+}
+
+
+.sidebar a:link {
+  color: #550028;
+}
+.sidebar .designer-name:link,
+a:visited {
+  color: #935;
+}
+.sidebar .designer-name:visited {
+  color: #b68;
+}
+
+.design-selection h3:before {
+  display: block;
+  font-size: 1.5em;
+  content: "Resteraunt Menu: ";
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper li {
+    padding: 3px 1em;
+    color: #c57e88;
+    font-size: 1em;
+    list-style-type: none
+}
+
+.wrapper li:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.wrapper a, footer a {
+    font-size: 1em;
+}
+
+.design-selection li {
+    padding: 4px 1.5em 4px 1em;
+    clear: left;
+    text-align: right;
+}
+
+.design-name {
+    float: left;
+    max-width: 66%;
+    text-align: left;
+    margin: -1px -4px -4px 0;
+    padding-right: .5em;
+}
+.designer-name {
+    margin-right: -5px;
+    margin-left: 2px;
 }
 
 .summary {
-    grid-area: summary;
+  padding: 0 3em 0.1em;
+}
+
+.summary p:last-child {
+  padding: 0.4em 0.5em;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.summary p {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.summary p:first-child {
+  margin-top: 60px;
+  padding: 30px 0.5em 1em;
+}
+.summary p:first-child:before {
+  content: " ";
+  height: 60px;
+  width: 70px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -35px;
+  display: block;
+  background: url("heart-and-lips.png") no-repeat 50% top;
 }
 
 .preamble {
-    grid-area: preamble;
+  grid-area: preamble;
+  padding: 40px;
 }
 
-
-header {  
+header {
   grid-area: header;
   background-image: url("https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-188,7219-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/KYO/KYO_813_original.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 650px;
-
 }
 
 header:first-child {
@@ -85,15 +177,11 @@ header > h2 {
   right: 16px;
 }
 
-header > h2 > *  {
-   position: absolute;
-   top: 50px;
-   right: 16px;
-   opacity: 0
-  }
-
-body {
-  background-color: tan;
+header > h2 > * {
+  position: absolute;
+  top: 50px;
+  right: 16px;
+  opacity: 0;
 }
 
 /* Animations */
@@ -117,9 +205,6 @@ body {
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
-  body {
-    background-color: olive;
-  }
   header {
     height: 550px;
   }
@@ -131,9 +216,14 @@ body {
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 650px) {
-  body {
-    background-color: blue;
+  .page-wrapper {
+    display: grid;
+    grid-template-areas:
+      "intro"
+      "side-bar"
+      "main";
   }
+
   header {
     height: 400px;
   }
