@@ -51,7 +51,6 @@ body {
 }
 
 .summary p:first-child {
-  margin-top: 60px;
   padding: 30px 0.5em 1em;
 }
 .summary p:first-child:before {
@@ -66,9 +65,34 @@ body {
   background: url("heart-and-lips.png") no-repeat 50% top;
 }
 
+.summary:has(a:link) {
+    color: white;
+    background-color:var(--dark-pink);
+    padding-bottom: 20px;
+}
+
+.summary a:link {
+    color: white;
+}
+
 .preamble {
   grid-area: preamble;
   padding: 40px;
+  overflow: hidden;
+}
+
+.preamble h3:before {
+  content: "Welcome to ";
+}
+
+.preamble h3:after {
+  content: "!";
+}
+
+.preamble h3:hover {
+    color: var(--purple);
+    padding-top: 10px;
+    transition-duration: 0.2s;
 }
 
 header {
@@ -259,34 +283,34 @@ footer a {
   margin-left: 2px;
 }
 
-.design-selection:after{
-    content: "";
-    display: block;
-    background-image: url("https://mybartender.com/wp-content/uploads/2023/05/red-cocktails-1024x576.jpg");
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    height: 60vh;
+.design-selection:after {
+  content: "";
+  display: block;
+  background-image: url("https://mybartender.com/wp-content/uploads/2023/05/red-cocktails-1024x576.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 60vh;
 }
 
-.design-archives:after{
-    content: "";
-    display: block;
-    background-image: url("https://www.mommytravels.net/wp-content/uploads/2016/02/H2O-Sushi-Izakaya-H2O-Party-Cocktails-.png");
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    height: 60vh;
+.design-archives:after {
+  content: "";
+  display: block;
+  background-image: url("https://www.mommytravels.net/wp-content/uploads/2016/02/H2O-Sushi-Izakaya-H2O-Party-Cocktails-.png");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 60vh;
 }
 
 .zen-resources:after {
-    content: "";
-    display: block;
-    background-image: url("https://www.acouplecooks.com/wp-content/uploads/2019/06/Whiskey-Sour-111.jpg");
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    height: 60vh;
+  content: "";
+  display: block;
+  background-image: url("https://www.acouplecooks.com/wp-content/uploads/2019/06/Whiskey-Sour-111.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 60vh;
 }
 
 /* Animations */
