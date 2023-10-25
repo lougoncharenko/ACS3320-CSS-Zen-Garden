@@ -13,6 +13,7 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: pink;
 }
 
 .page-wrapper {
@@ -23,7 +24,6 @@ body {
 }
 
 .intro {
-  background-color: pink;
   grid-area: intro;
   display: grid;
   grid-template-areas:
@@ -32,9 +32,22 @@ body {
 }
 
 .main {
-  background-color: green;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--purple);
+  color: var(--pale-white);
   grid-area: main;
 }
+
+.main a:link {
+    color: pink;
+  }
+
+  .main a:link:hover {
+    color: var(--light-pink);
+  }
+
+
 
 .sidebar {
   display: flex;
@@ -44,15 +57,14 @@ body {
 
 .sidebar > .wrapper {
   justify-content: end;
-  background-color: pink;
-  border: 2px solid #f70776;
+  background-color: var(--light-pink);
+  border: 2px solid var(--pale-white);
   padding: 30px;
   border-radius: 80px;
 }
 
 .wrapper > * {
 }
-
 
 .sidebar a:link {
   color: #550028;
@@ -75,36 +87,37 @@ a:visited {
 }
 
 .wrapper li {
-    padding: 3px 1em;
-    color: #c57e88;
-    font-size: 1em;
-    list-style-type: none
+  padding: 3px 1em;
+  color: #c57e88;
+  font-size: 1em;
+  list-style-type: none;
 }
 
 .wrapper li:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.wrapper a, footer a {
-    font-size: 1em;
+.wrapper a,
+footer a {
+  font-size: 1em;
 }
 
 .design-selection li {
-    padding: 4px 1.5em 4px 1em;
-    clear: left;
-    text-align: right;
+  padding: 4px 1.5em 4px 1em;
+  clear: left;
+  text-align: right;
 }
 
 .design-name {
-    float: left;
-    max-width: 66%;
-    text-align: left;
-    margin: -1px -4px -4px 0;
-    padding-right: .5em;
+  float: left;
+  max-width: 66%;
+  text-align: left;
+  margin: -1px -4px -4px 0;
+  padding-right: 0.5em;
 }
 .designer-name {
-    margin-right: -5px;
-    margin-left: 2px;
+  margin-right: -5px;
+  margin-left: 2px;
 }
 
 .summary {
