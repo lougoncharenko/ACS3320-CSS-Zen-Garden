@@ -3,7 +3,7 @@
 
 :root {
   --pale-white: #fbf9fa;
-  --light-pink: #f70776;
+  --light-pink: #ef8bba;
   --dark-pink: #c3195d;
   --purple: #680747;
   --black: #141010;
@@ -20,104 +20,18 @@ body {
   display: grid;
   grid-template-areas:
     "intro intro"
-    "main side-bar";
+    "main sidebar";
 }
+
+/* intro styling styling */
 
 .intro {
   grid-area: intro;
   display: grid;
   grid-template-areas:
     "header"
-    "preamble";
-}
-
-.main {
-  margin: 20px;
-  padding: 20px;
-  background-color: var(--purple);
-  color: var(--pale-white);
-  grid-area: main;
-}
-
-.main a:link {
-    color: pink;
-  }
-
-  .main a:link:hover {
-    color: var(--light-pink);
-  }
-
-
-
-.sidebar {
-  display: flex;
-  grid-area: side-bar;
-  padding: 40px;
-}
-
-.sidebar > .wrapper {
-  justify-content: end;
-  background-color: var(--light-pink);
-  border: 2px solid var(--pale-white);
-  padding: 30px;
-  border-radius: 80px;
-}
-
-.wrapper > * {
-}
-
-.sidebar a:link {
-  color: #550028;
-}
-.sidebar .designer-name:link,
-a:visited {
-  color: #935;
-}
-.sidebar .designer-name:visited {
-  color: #b68;
-}
-
-.design-selection h3:before {
-  display: block;
-  font-size: 1.5em;
-  content: "Resteraunt Menu: ";
-  text-decoration: underline;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.wrapper li {
-  padding: 3px 1em;
-  color: #c57e88;
-  font-size: 1em;
-  list-style-type: none;
-}
-
-.wrapper li:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.wrapper a,
-footer a {
-  font-size: 1em;
-}
-
-.design-selection li {
-  padding: 4px 1.5em 4px 1em;
-  clear: left;
-  text-align: right;
-}
-
-.design-name {
-  float: left;
-  max-width: 66%;
-  text-align: left;
-  margin: -1px -4px -4px 0;
-  padding-right: 0.5em;
-}
-.designer-name {
-  margin-right: -5px;
-  margin-left: 2px;
+    "preamble"
+    "summary";
 }
 
 .summary {
@@ -197,6 +111,184 @@ header > h2 > * {
   opacity: 0;
 }
 
+/* Main styling */
+
+.main {
+  margin-top: 30px;
+  color: black;
+  grid-area: main;
+}
+
+.main a:link {
+  color: var(--purple);
+}
+
+.main a:link:hover {
+  color: var(--light-pink);
+}
+
+.main > * {
+  width: 50vw;
+  border: 2px solid var(--pale-white);
+  padding: 20px;
+  margin: 20px;
+}
+
+.main div:nth-child(2n + 1),
+footer {
+  position: relative;
+  left: 60px;
+}
+
+.explanation h3,
+.participation h3,
+.benefits h3,
+.requirements h3 {
+  text-decoration: underline;
+  font-size: 1.5em;
+  background-color: pink;
+}
+
+.explanation:after {
+  content: "";
+  display: block;
+  background-image: url("https://i.pinimg.com/736x/4b/4b/11/4b4b110df48e34ba58df594fef56a3ac.jpg");
+  background-position: bottom;
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.participation:after {
+  content: "";
+  display: block;
+  background: url("https://cdn.shopify.com/s/files/1/2289/1873/files/Small_Portion_of_food_Elegant-min_be542f82-cfbf-4ba2-8096-fb58798cf338.jpg?v=1668530010")
+    center center no-repeat;
+  height: 60vh;
+}
+
+.benefits:after {
+  content: "";
+  display: block;
+  background: url("https://img-b.udemycdn.com/course/750x422/4372468_0100.jpg")
+    center center no-repeat;
+  height: 60vh;
+}
+
+.requirements:after {
+  content: "";
+  display: block;
+  background: url("https://www.foodandwine.com/thmb/xz69v522hvZjRNSn_EGmJrpP4uU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-US-Restaurants-Moon-Rabbit-FT-BLOG0423-433f315e34d249199548312d489f0196.jpg")
+    center center no-repeat;
+  height: 60vh;
+}
+
+/* Sidebar styling */
+
+.sidebar {
+  margin-top: 30px;
+  display: flex;
+  grid-area: sidebar;
+  padding: 20px;
+}
+
+.sidebar > .wrapper {
+  justify-content: end;
+  height: fit-content;
+  background-color: var(--light-pink);
+  border: 2px solid var(--pale-white);
+  padding: 40px;
+  border-radius: 80px;
+}
+
+.wrapper h3 {
+  font-size: 1.5em;
+}
+
+.sidebar a:link {
+  color: #550028;
+}
+.sidebar .designer-name:link,
+a:visited {
+  color: #935;
+}
+.sidebar .designer-name:visited {
+  color: #b68;
+}
+
+.design-selection h3:before {
+  display: block;
+  font-size: 1.5em;
+  content: "Resteraunt Menu: ";
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper li {
+  padding: 3px 1em;
+  color: #c57e88;
+  font-size: 1em;
+  list-style-type: none;
+}
+
+.wrapper li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.wrapper a,
+footer a {
+  font-size: 1em;
+}
+
+.design-selection li {
+  padding: 4px 1.5em 4px 1em;
+  clear: left;
+  text-align: right;
+}
+
+.design-name {
+  float: left;
+  max-width: 66%;
+  text-align: left;
+  margin: -1px -4px -4px 0;
+  padding-right: 0.5em;
+}
+.designer-name {
+  margin-right: -5px;
+  margin-left: 2px;
+}
+
+.design-selection:after{
+    content: "";
+    display: block;
+    background-image: url("https://mybartender.com/wp-content/uploads/2023/05/red-cocktails-1024x576.jpg");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
+.design-archives:after{
+    content: "";
+    display: block;
+    background-image: url("https://www.mommytravels.net/wp-content/uploads/2016/02/H2O-Sushi-Izakaya-H2O-Party-Cocktails-.png");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
+.zen-resources:after {
+    content: "";
+    display: block;
+    background-image: url("https://www.acouplecooks.com/wp-content/uploads/2019/06/Whiskey-Sour-111.jpg");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
 /* Animations */
 @keyframes anim-lineUp {
   0% {
@@ -225,18 +317,27 @@ header > h2 > * {
   header > * {
     font-size: 35px;
   }
-}
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 650px) {
   .page-wrapper {
     display: grid;
     grid-template-areas:
       "intro"
-      "side-bar"
+      "sidebar"
       "main";
   }
 
+  .sidebar {
+    justify-self: center;
+  }
+
+  .main {
+    justify-self: center;
+    width: max-content;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 650px) {
   header {
     height: 400px;
   }
